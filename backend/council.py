@@ -228,10 +228,8 @@ def calculate_aggregate_rankings(
     model_positions = defaultdict(list)
 
     for ranking in stage2_results:
-        ranking_text = ranking['ranking']
-
-        # Parse the ranking from the structured format
-        parsed_ranking = parse_ranking_from_text(ranking_text)
+        # Use the already-parsed ranking from stage2 instead of re-parsing
+        parsed_ranking = ranking.get('parsed_ranking') or []
 
         for position, label in enumerate(parsed_ranking, start=1):
             if label in label_to_model:
