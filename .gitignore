@@ -21,3 +21,6 @@ frontend/dist/
 frontend/.vite/
 # Claude Code
 .claude/
+
+# Ignore local chat data
+data/conversations/*.json

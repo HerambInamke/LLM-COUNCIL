@@ -1,7 +1,5 @@
 # LLM Council
 
-![llmcouncil](header.jpg)
-
 The idea of this repo is that instead of asking a question to a single LLM provider, you can consult your own "LLM Council". This is a local web app that looks like ChatGPT, except it uses OpenRouter to send your query to multiple LLMs in parallel. It then asks them to review and rank each other's work, and finally, a Chairman LLM synthesizes everything into one polished final response.
 
 In a bit more detail, here is what happens when you submit a query:
