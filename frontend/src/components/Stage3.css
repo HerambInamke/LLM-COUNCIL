@@ -10,12 +10,33 @@
   border: 1px solid #c8e6c8;
 }
 
+.chairman-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
 .chairman-label {
   color: #2d8a2d;
   font-size: 12px;
   font-family: monospace;
-  margin-bottom: 12px;
   font-weight: 600;
+}
+
+.copy-button {
+  background-color: #e8f5e9;
+  color: #2d8a2d;
+  border: 1px solid #c8e6c8;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background-color: #c8e6c8;
 }
 
 .final-text {
