@@ -163,6 +163,13 @@ function App() {
 
           case 'error':
             console.error('Stream error:', event.message);
+            setCurrentConversation((prev) => {
+              const messages = [...prev.messages];
+              const lastMsg = messages[messages.length - 1];
+              lastMsg.error = event.message;
+              lastMsg.loading = { stage1: false, stage2: false, stage3: false };
+              return { ...prev, messages };
+            });
             setIsLoading(false);
             break;
 

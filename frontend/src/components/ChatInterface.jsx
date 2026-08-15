@@ -75,7 +75,7 @@ export default function ChatInterface({
                   {/* Stage 1 */}
                   {msg.loading?.stage1 && (
                     <div className="stage-loading">
-                      <div className="spinner"></div>
+                      <div className="bouncing-dots"><div></div><div></div><div></div></div>
                       <span>Running Stage 1: Collecting individual responses...</span>
                     </div>
                   )}
@@ -84,7 +84,7 @@ export default function ChatInterface({
                   {/* Stage 2 */}
                   {msg.loading?.stage2 && (
                     <div className="stage-loading">
-                      <div className="spinner"></div>
+                      <div className="bouncing-dots"><div></div><div></div><div></div></div>
                       <span>Running Stage 2: Peer rankings...</span>
                     </div>
                   )}
@@ -99,11 +99,23 @@ export default function ChatInterface({
                   {/* Stage 3 */}
                   {msg.loading?.stage3 && (
                     <div className="stage-loading">
-                      <div className="spinner"></div>
+                      <div className="bouncing-dots"><div></div><div></div><div></div></div>
                       <span>Running Stage 3: Final synthesis...</span>
                     </div>
                   )}
                   {msg.stage3 && <Stage3 finalResponse={msg.stage3} />}
+
+                  {/* Error State */}
+                  {msg.error && (
+                    <div className="error-boundary">
+                      <div className="error-icon">⚠️</div>
+                      <div className="error-content">
+                        <h4>Council Error</h4>
+                        <p>{msg.error}</p>
+                        <span className="error-hint">Check your API key and model configurations in .env</span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -112,7 +124,7 @@ export default function ChatInterface({
 
         {isLoading && (
           <div className="loading-indicator">
-            <div className="spinner"></div>
+            <div className="bouncing-dots"><div></div><div></div><div></div></div>
             <span>Consulting the council...</span>
           </div>
         )}
