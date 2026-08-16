@@ -9,7 +9,7 @@ function deAnonymizeText(text, labelToModel) {
   // Replace each "Response X" with the actual model name
   Object.entries(labelToModel).forEach(([label, model]) => {
     const modelShortName = model.split('/')[1] || model;
-    result = result.replace(new RegExp(label, 'g'), `**${modelShortName}**`);
+    result = result.replace(new RegExp(label, 'g'), `**MODEL:${modelShortName}**`);
   });
   return result;
 }
@@ -28,7 +28,7 @@ export default function Stage2({ rankings, labelToModel, aggregateRankings }) {
       <h4>Raw Evaluations</h4>
       <p className="stage-description">
         Each model evaluated all responses (anonymized as Response A, B, C, etc.) and provided rankings.
-        Below, model names are shown in <strong>bold</strong> for readability, but the original evaluation used anonymous labels.
+        Below, model names are shown in badges for readability, but the original evaluation used anonymous labels.
       </p>
 
       <div className="tabs">
@@ -48,7 +48,17 @@ export default function Stage2({ rankings, labelToModel, aggregateRankings }) {
           {rankings[activeTab].model}
         </div>
         <div className="ranking-content markdown-content">
-          <ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              strong: ({node, children, ...props}) => {
+                const text = String(children);
+                if (text.startsWith('MODEL:')) {
+                  return <span className="model-badge">{text.replace('MODEL:', '')}</span>;
+                }
+                return <strong {...props}>{children}</strong>;
+              }
+            }}
+          >
             {deAnonymizeText(rankings[activeTab].ranking, labelToModel)}
           </ReactMarkdown>
         </div>

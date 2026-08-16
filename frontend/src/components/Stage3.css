@@ -1,13 +1,39 @@
 .stage3 {
-  background: #f0fff0;
-  border-color: #c8e6c8;
+  background: #ECFDF5;
+  border: 1px solid #34D399;
 }
 
+.stage3 .stage-title {
+  color: #065F46;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stage3 .stage-title::before {
+  content: '✓';
+  display: inline-block;
+  background: #10B981;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.stage3 .markdown-content p {
+  color: #064E3B;
+  font-size: 1.05rem; /* Slightly larger text for the final answer */
+}
+
+/* Keeping other existing styles if they are used */
 .final-response {
   background: #ffffff;
   padding: 20px;
   border-radius: 6px;
-  border: 1px solid #c8e6c8;
+  border: 1px solid #34D399;
 }
 
 .chairman-header {
@@ -18,16 +44,16 @@
 }
 
 .chairman-label {
-  color: #2d8a2d;
+  color: #065F46;
   font-size: 12px;
   font-family: monospace;
   font-weight: 600;
 }
 
 .copy-button {
-  background-color: #e8f5e9;
-  color: #2d8a2d;
-  border: 1px solid #c8e6c8;
+  background-color: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #34D399;
   border-radius: 4px;
   padding: 4px 10px;
   font-size: 12px;
@@ -36,11 +62,11 @@
 }
 
 .copy-button:hover {
-  background-color: #c8e6c8;
+  background-color: #D1FAE5;
 }
 
 .final-text {
-  color: #333;
+  color: #064E3B;
   line-height: 1.7;
-  font-size: 15px;
+  font-size: 1.05rem;
 }

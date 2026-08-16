@@ -1,6 +1,15 @@
 :root {
+  --bg-app: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #666666;
+  --accent: #2563EB;
+  --border-color: #E5E7EB;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.5;
+  color: var(--text-primary);
+  line-height: 1.6;
   font-weight: 400;
 
   font-synthesis: none;
@@ -19,7 +28,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: var(--bg-app);
 }
 
 #root {
@@ -30,11 +39,12 @@ body {
 
 /* Global markdown styling */
 .markdown-content {
-  padding: 12px;
+  padding: 0;
 }
 
 .markdown-content p {
   margin: 0 0 12px 0;
+  color: var(--text-primary);
 }
 
 .markdown-content p:last-child {
@@ -93,6 +103,6 @@ body {
 .markdown-content blockquote {
   margin: 0 0 12px 0;
   padding-left: 16px;
-  border-left: 4px solid #ddd;
-  color: #666;
+  border-left: 4px solid var(--border-color);
+  color: var(--text-secondary);
 }

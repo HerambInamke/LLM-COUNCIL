@@ -39,7 +39,7 @@ export default function ChatInterface({
 
   if (!conversation) {
     return (
-      <div className="chat-interface">
+      <div className="chat-container">
         <div className="empty-state">
           <h2>Welcome to LLM Council</h2>
           <p>Create a new conversation to get started</p>
@@ -49,7 +49,7 @@ export default function ChatInterface({
   }
 
   return (
-    <div className="chat-interface">
+    <div className="chat-container">
       <div className="messages-container">
         {conversation.messages.length === 0 ? (
           <div className="empty-state">
