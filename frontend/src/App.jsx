@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import ChatInterface from './components/ChatInterface';
+import WelcomePage from './components/WelcomePage';
 import { api } from './api';
 import './App.css';
 
@@ -215,11 +216,15 @@ function App() {
         onDeleteConversation={handleDeleteConversation}
       />
       <div className="main-content">
-        <ChatInterface
-          conversation={currentConversation}
-          onSendMessage={handleSendMessage}
-          isLoading={isLoading}
-        />
+        {!currentConversation ? (
+          <WelcomePage onNewConversation={handleNewConversation} />
+        ) : (
+          <ChatInterface
+            conversation={currentConversation}
+            onSendMessage={handleSendMessage}
+            isLoading={isLoading}
+          />
+        )}
       </div>
     </div>
   );
