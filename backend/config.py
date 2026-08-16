@@ -15,11 +15,12 @@ if _council_models_env:
 else:
     COUNCIL_MODELS = [
         "openai/gpt-4o-mini",
-        "anthropic/claude-3-haiku"
+        "anthropic/claude-3-haiku",
+        "meta-llama/llama-3.1-8b-instruct"
     ]
 
 # Chairman model - synthesizes final response
-CHAIRMAN_MODEL = os.getenv("CHAIRMAN_MODEL", "openai/gpt-4o-mini")
+CHAIRMAN_MODEL = os.getenv("CHAIRMAN_MODEL", "google/gemini-1.5-flash")
 
 # OpenRouter API endpoint
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"

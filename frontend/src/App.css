@@ -7,17 +7,25 @@
   height: 100vh;
   width: 100vw;
   background: var(--bg-app);
-  justify-content: center;
 }
 
 .main-content {
   flex: 1;
-  max-width: 900px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   height: 100%;
+  align-items: center; /* Center the children horizontally */
+}
+
+/* We create an inner container inside main-content to constrain width */
+.chat-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
 }
 
 .messages {
