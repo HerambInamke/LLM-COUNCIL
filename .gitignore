@@ -24,3 +24,12 @@ frontend/.vite/
 
 # Ignore local chat data
 data/conversations/*.json
+
+# Claude & Superpowers
+.claude/
+.superpowers/
+CLAUDE.md
+
+# Documentation & Architecture
+docs/
+ARCHITECTURE.md
