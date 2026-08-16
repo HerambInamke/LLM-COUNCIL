@@ -89,20 +89,24 @@
 }
 
 .delete-btn {
-  background: none;
+  background: transparent;
   border: none;
-  color: #999;
-  font-size: 14px;
+  color: #ef4444;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  padding: 4px;
-  opacity: 0;
-  transition: opacity 0.2s, color 0.2s;
+  padding: 8px 12px;
+  opacity: 0.7;
+  transition: all 0.2s;
+  border-radius: 6px;
 }
 
 .conversation-item:hover .delete-btn {
   opacity: 1;
+  background: #fee2e2;
 }
 
 .delete-btn:hover {
-  color: #ef4444;
+  background: #ef4444 !important;
+  color: #ffffff;
 }
